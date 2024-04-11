@@ -6,13 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <!-- Camera preview area -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scanButton" />
+
+    <!-- Scan button -->
+    <Button
+        android:id="@+id/scanButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Scan Cheque"
+        app:layout_constraintTop_toBottomOf="@id/cameraPreview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Placeholder for routing number -->
+    <EditText
+        android:id="@+id/routingNumberEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Routing Number"
+        app:layout_constraintTop_toBottomOf="@id/scanButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Placeholder for account number -->
+    <EditText
+        android:id="@+id/accountNumberEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Account Number"
+        app:layout_constraintTop_toBottomOf="@id/routingNumberEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
